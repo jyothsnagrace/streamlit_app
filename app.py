@@ -1,3 +1,5 @@
+
+
 import streamlit as st
 import random
 import altair as alt
@@ -22,7 +24,7 @@ x_axis = np.arange(0, x_limit,1)
 y_data = [random.random() for value in x_axis]
 
 df = pd.DataFrame({'x': x_axis,
-                     'y': y_data})
+                    'y': y_data})
 st.write(df)
 
 
@@ -64,14 +66,15 @@ st.markdown("\n \n")
 st.markdown("\n \n")
 
 scatter = alt.Chart(df).mark_point(size=150, opacity=0.8, fill='magenta', color='yellow').encode(
-    alt.X('x', title = "New X-axis title"),
-    alt.Y('y', title = "New Y-axis title"),
-    tooltip = ['x','y']
+   alt.X('x', title = "New X-axis title"),
+   alt.Y('y', title = "New Y-axis title"),
+   tooltip = ['x','y']
 ).properties(title="New Chart Title",background='#D9E9F0')
 
 st.altair_chart(scatter, theme="streamlit", use_container_width=True)
 
 st.markdown("\n \n")
+
 st.markdown(
 "**QUESTION 4**: Explore on your own!  Go visit https://altair-viz.github.io/gallery/index.html.\n "
 "Pick a random visual, make two visual changes to it, document those changes, and plot the visual.  \n"
